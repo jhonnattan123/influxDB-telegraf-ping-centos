@@ -72,25 +72,6 @@ sudo systemctl start influxdb && sudo systemctl enable influxdb
 
 Telegraf is a service that collects and sends metrics, and then sends them to other systems. It can collect data from the system it is running on, such as disk usage, RAM, CPU, system load, connections and many more, and it also includes a growing list of input plugins, such as apache, consul, couchDB, Docker, Elast
 
-We add the repository:
-
-```console
-sudo vi /etc/yum.repos.d/influxdb.repo
-```
-
-We modify content to:
-
-```console
-[InfluxDB]
-name = InfluxDB Repository - RHEL 
-baseurl = https://repos.influxdata.com/rhel/7/x86_64/stable/
-enabled = 1
-gpgcheck = 1
-gpgkey = https://repos.influxdata.com/influxdb.key
-```
-
-We save, and install:
-
 ```console
 
 sudo yum update
